@@ -4,11 +4,17 @@ const createTables = async () => {
     try {
         // Create locations table
         await pool.query(`
-            CREATE TABLE IF NOT EXISTS locations (
-                id SERIAL PRIMARY KEY,
-                name TEXT NOT NULL UNIQUE
-            );
-        `);
+        CREATE TABLE IF NOT EXISTS locations (
+            id SERIAL PRIMARY KEY,
+            name TEXT NOT NULL UNIQUE,
+            image TEXT,
+            address TEXT,
+            city TEXT,
+            state TEXT,
+            zip TEXT
+        );
+    `);
+    
 
         // Create events table
         await pool.query(`

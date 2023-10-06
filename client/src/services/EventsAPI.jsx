@@ -1,7 +1,7 @@
-const BASE_URL = '/api/events';
+const EVENTS_BASE_URL = '/api/events';
 
 export const getAllEvents = async () => {
-    const response = await fetch(BASE_URL);
+    const response = await fetch(EVENTS_BASE_URL);
     if (response.ok) {
         return await response.json();
     } else {
@@ -10,7 +10,7 @@ export const getAllEvents = async () => {
 }
 
 export const getEventByLocation = async (locationId) => {
-    const response = await fetch(`${BASE_URL}/location/${locationId}`);
+    const response = await fetch(`${EVENTS_BASE_URL}/location/${locationId}`);
     if (response.ok) {
         return await response.json();
     } else {

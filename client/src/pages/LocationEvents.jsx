@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import { useParams } from 'react-router-dom';
-import { getAllLocations, getEventByLocation } from '../services/EventsAPI';
+import { getEventByLocation } from '../services/EventsAPI';
+import { getAllLocations} from '../services/LocationsAPI';
 
 const LocationEvents = () => {
     const [location, setLocation] = useState({});
