@@ -1,15 +1,15 @@
 .location-image {
-    width: 300px; /* Or whatever width you want for the image container */
-    height: 300px; /* Or whatever height you want */
-    overflow: hidden; /* This will ensure that if the image is bigger than the container, it'll be clipped */
-    position: relative; /* This allows for children positioning */
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
 }
 
 .location-image img {
-    max-width: 100%; /* This will ensure the image doesn't grow bigger than its container */
-    min-height: 100%; /* This will ensure the image covers the entire height */
-    position: absolute; /* Positioning the image */
-    top: 50%; /* centering */
-    left: 50%; /* centering */
-    transform: translate(-50%, -50%); /* Ensure it remains centered */
+    max-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
