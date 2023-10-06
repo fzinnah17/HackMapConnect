@@ -1,0 +1,67 @@
+.locations {
+    text-align: center;
+}
+
+.locations h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #00838d;
+    text-align: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.locations .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.locations .card {
+    position: relative;
+    width: 262px;
+    height: 300px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.locations .card:hover {
+    transform: translateY(-10px);
+}
+
+.locations .card h3 {
+    margin: 20px 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.locations .card p {
+    margin: 0 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.locations .card .go-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #00838d;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.locations .card .go-arrow {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}

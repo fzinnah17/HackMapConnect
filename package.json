@@ -1,5 +1,5 @@
 {
-  "name": "HackMapConnect",
+  "name": "Hack Map Connect",
   "type": "module",
   "scripts": {
     "dev": "concurrently \"cd client && vite\" \"cd server && nodemon server\"",
