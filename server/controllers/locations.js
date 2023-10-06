@@ -1,7 +1,7 @@
 // Fetch all locations.
 // Maybe later: Add, Update, and Delete locations.
 
-import { pool } from '../database.js';
+import { pool } from '../config/database.js';
 
 export const getAllLocations = async (req, res) => {
     try {
