@@ -1,5 +1,5 @@
 .locations {
-    text-align: center;
+  padding: 20px; /* This is a placeholder style, adapt as necessary */
 }
 
 .locations h2 {
@@ -13,55 +13,132 @@
 }
 
 .locations .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
-.locations .card {
-    position: relative;
-    width: 262px;
-    height: 300px;
-    margin: 20px;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
+.locations h3 {
+  color: #262626;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
 }
 
-.locations .card:hover {
-    transform: translateY(-10px);
+.locations p {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #666666;
 }
 
-.locations .card h3 {
-    margin: 20px 0 10px;
-    font-size: 18px;
-    color: #333;
+.locations .go-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background-color: #00838d;
+  border-radius: 0 4px 0 32px;
 }
 
-.locations .card p {
-    margin: 0 20px;
-    font-size: 14px;
-    color: #666;
+.locations .go-arrow {
+  margin-top: -4px;
+  margin-right: -4px;
+  color: white;
+  font-family: courier, sans;
 }
 
-.locations .card .go-corner {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 40px;
-    height: 40px;
-    background-color: #00838d;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.locations .card1, .card2, .card3 {
+  display: block;
+  position: relative;
+  max-width: 262px;
+  background-color: #f2f8f9;
+  border-radius: 4px;
+  padding: 32px 24px;
+  margin: 12px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
 }
 
-.locations .card .go-arrow {
-    color: #fff;
-    font-size: 20px;
-    font-weight: bold;
+.card1:before,
+.card2:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -16px;
+  right: -16px;
+  background: #00838d;
+  height: 32px;
+  width: 32px;
+  border-radius: 32px;
 }
+
+.card1:hover p,
+.card1:hover h3 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card1:before {
+  transform: scale(1);
+  transition: transform 0.25s ease-out;
+}
+
+.card1:hover:before {
+  transform: scale(21);
+}
+
+.card2 {
+  border: 1px solid #f2f8f9;
+}
+
+.card2:before {
+  transform: scale(2);
+  transition: transform 0.15s ease-out;
+}
+
+.card2:hover {
+  transition: all 0.2s ease-out;
+  box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+  top: -4px;
+  border: 1px solid #cccccc;
+  background-color: white;
+}
+
+.card2:hover:before {
+  transform: scale(2.15);
+}
+
+.card3 {
+    border: 1px solid #f2f8f9;
+    transition: border-color 0.3s ease, opacity 0.3s ease; 
+  }
+  
+  .card3 .go-corner {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+  
+  .card3:hover {
+    border-color: #00838d;
+    opacity: 0.9;
+    z-index: 1;
+  }
+  
+  .card3:hover p {
+    color: #00838d;
+  }
+  
+  .card3:hover .go-corner {
+    opacity: 1;
+  }
+  

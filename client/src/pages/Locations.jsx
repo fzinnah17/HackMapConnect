@@ -22,15 +22,18 @@ const Locations = () => {
         <div className="locations">
             <h2>Select a Location</h2>
             <div className="container">
-                {locations.map((location, index) => (
-                    <a key={location.id} className="card" href={`/location/${location.id}`}>
-                        <h3>{location.name}</h3>
-                        <p>Card description with lots of great facts and interesting details.</p>
-                        <div className="go-corner">
-                            <div className="go-arrow">→</div>
-                        </div>
-                    </a>
-                ))}
+                {locations.map((location, index) => {
+                    const cardStyle = `card${(index % 3) + 1}`;
+                    return (
+                        <a key={location.id} className={cardStyle} href={`/location/${location.id}`}>
+                            <h3>{location.name}</h3>
+                            <p>Click to learn more.</p>
+                            <div className="go-corner">
+                                <div className="go-arrow">→</div>
+                            </div>
+                        </a>
+                    );
+                })}
             </div>
         </div>
     );
