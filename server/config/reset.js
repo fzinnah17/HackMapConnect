@@ -14,7 +14,6 @@ const createTables = async () => {
             zip TEXT
         );
     `);
-    
 
         // Create events table
         await pool.query(`
@@ -31,8 +30,6 @@ const createTables = async () => {
 
     } catch (err) {
         console.error("Error creating tables: ", err);
-    } finally {
-        pool.end();
     }
 };
 
