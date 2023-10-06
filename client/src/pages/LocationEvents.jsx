@@ -27,10 +27,16 @@ const LocationEvents = () => {
 
     const getCountdown = (eventDate) => {
         const now = moment();
-        const then = moment(eventDate);
+        const then = moment(eventDate, "YYYY-MM-DD");
         const countdown = moment.duration(then.diff(now));
-        return `${countdown.days()} days, ${countdown.hours()} hours, ${countdown.minutes()} minutes`;
+    
+        const years = countdown.years();
+        const months = countdown.months();
+        const days = countdown.days();
+    
+        return `${years} years, ${months} months, ${days} days`;
     };
+    
 
     return (
         <div className='location-events'>
