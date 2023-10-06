@@ -8,14 +8,16 @@ const Locations = () => {
         const fetchData = async () => {
             try {
                 const data = await getAllLocations();
-                setLocations(data);
+                const sortedData = data.sort((a, b) => a.id - b.id);
+                setLocations(sortedData);
             } catch (error) {
                 console.error("Error fetching locations:", error);
             }
         };
-
+    
         fetchData();
     }, []);
+    
 
     return (
         <div>

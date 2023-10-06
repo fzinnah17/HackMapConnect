@@ -3,6 +3,7 @@ import moment from 'moment';
 import { useParams } from 'react-router-dom';
 import { getEventByLocation } from '../services/EventsAPI';
 import { getAllLocations } from '../services/LocationsAPI';
+import "../css/LocationEvents.css"
 
 const LocationEvents = () => {
     const [location, setLocation] = useState({});
@@ -49,7 +50,7 @@ const LocationEvents = () => {
                         {
                             events && events.length > 0 ? events.map(event => (
                                 <div key={event.id} className={new Date(event.date) < new Date() ? 'past-event' : ''}>
-                                    <h3>{event.title}</h3>
+                                    <h3>Hackathon Name: {event.title}</h3>
                                     <p>Date: {new Date(event.date).toLocaleDateString()}</p>
                                     <p>Countdown: {getCountdown(event.date)}</p>
                                     <p>Description: {event.description}</p>
