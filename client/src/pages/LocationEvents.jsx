@@ -29,13 +29,18 @@ const LocationEvents = () => {
         const now = moment();
         const then = moment(eventDate, "YYYY-MM-DD");
         const countdown = moment.duration(then.diff(now));
+        
+        if (then.isBefore(now)) {
+            return "Event has passed";
+        }
     
         const years = countdown.years();
         const months = countdown.months();
         const days = countdown.days();
-    
+        
         return `${years} years, ${months} months, ${days} days`;
     };
+    
     
 
     return (

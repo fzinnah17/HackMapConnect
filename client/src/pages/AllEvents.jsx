@@ -13,27 +13,33 @@ const AllEvents = () => {
             try {
                 const eventData = await getAllEvents();
                 const locationData = await getAllLocations();
-                setEvents(eventData);
+                setEvents(eventData.sort((a, b) => new Date(a.date) - new Date(b.date)));
                 setLocations(locationData);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
         };
-
+    
         fetchData();
     }, []);
+    
 
     const getCountdown = (eventDate) => {
         const now = moment();
         const then = moment(eventDate, "YYYY-MM-DD");
         const countdown = moment.duration(then.diff(now));
+        
+        if (then.isBefore(now)) {
+            return "Event has passed";
+        }
     
         const years = countdown.years();
         const months = countdown.months();
         const days = countdown.days();
-    
+        
         return `${years} years, ${months} months, ${days} days`;
     };
+    
     
 
     const filteredEvents = filterLocation ? events.filter(event => event.location_id === parseInt(filterLocation)) : events;
